@@ -28,7 +28,7 @@ http://localhost:3333/
 
 https://3333-f4813423-db02-471a-aceb-d5195425dc5f.ws-us02.gitpod.io/
 
-### POST
+### POST + BODY PARAM
 
 https://3333-f4813423-db02-471a-aceb-d5195425dc5f.ws-us02.gitpod.io/devs
 
@@ -38,3 +38,7 @@ https://3333-f4813423-db02-471a-aceb-d5195425dc5f.ws-us02.gitpod.io/devs
 	"latitude": -22.5262556,
 	"longitude": -43.2187699
 }
+
+### GET + QUERY PARAM
+
+https://3333-f4813423-db02-471a-aceb-d5195425dc5f.ws-us02.gitpod.io/search?latitude=-22.5262556&longitude=-43.2187699&techs=Java

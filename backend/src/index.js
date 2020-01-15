@@ -5,6 +5,7 @@ const routes = require('./routes');
 
 const app = express();
 
+mongoose.set('useCreateIndex', true); // To remove the warning: DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
 mongoose.connect('mongodb+srv://ownistack:ownistack@omnistack-cwf0c.mongodb.net/test?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true 

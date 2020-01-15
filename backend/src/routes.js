@@ -8,7 +8,7 @@
 const { Router} = require('express');
 
 const DevController = require('./controllers/DevControllers');
-//const SearchController = require('./controllers/SearchController');
+const SearchController = require('./controllers/SearchController');
 
 const routes = Router();
 
@@ -17,7 +17,7 @@ routes.get('/', (request, response)=>{
 });
 
 routes.get('/devs', DevController.index); // get all users
-routes.post('/devs', DevController.store); // search users
-//routes.get('/search', SearchController.index);
+routes.post('/devs', DevController.store); // register a user
+routes.get('/search', SearchController.index); // search a user by tech(s)
 
 module.exports = routes;

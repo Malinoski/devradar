@@ -43,9 +43,16 @@ module.exports = {
             })
         }
 
-        
-
         // return response.json({message: 'Hello World!!'}); //json
         return response.json(dev); //json
-    }    
+    },
+    
+    /*
+    async update(request, response){
+
+    }, 
+
+    async destroy(request, response){
+
+    }*/
 }
