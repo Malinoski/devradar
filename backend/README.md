@@ -18,8 +18,21 @@ yarn add nodemon -D
 yarn nodemon src/index.js 
 ```
 
-# Test: 
+## Test examples: 
+
+You can access directly by web browser or a REST Client, like Insomnia.
+
+### GET
 
 http://localhost:3333/
 
 https://3333-f4813423-db02-471a-aceb-d5195425dc5f.ws-us02.gitpod.io/
+
+### POST
+
+https://3333-f4813423-db02-471a-aceb-d5195425dc5f.ws-us02.gitpod.io/devs
+
+{
+	"github_username": "malinoski",
+	"techs": "Java, PHP, Javascript, Angular, React, Node.js"
+}
