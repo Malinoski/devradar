@@ -34,5 +34,7 @@ https://3333-f4813423-db02-471a-aceb-d5195425dc5f.ws-us02.gitpod.io/devs
 
 {
 	"github_username": "malinoski",
-	"techs": "Java, PHP, Javascript, Angular, React, Node.js"
+	"techs": "Java, PHP, Javascript, Angular, React, Node.js",
+	"latitude": -22.5262556,
+	"longitude": -43.2187699
 }
