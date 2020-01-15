@@ -5,10 +5,11 @@ const routes = require('./routes');
 
 const app = express();
 
-mongoose.connect('', {
+/*mongoose.connect('', {
     useNewUrlParser: true,
     useUnifiedTopology: true 
 });
+*/
 
 app.use(express.json());
 app.use(routes);

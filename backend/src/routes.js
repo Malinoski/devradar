@@ -11,6 +11,10 @@ const Dev = require('./models/Dev');
 
 const routes = Router();
 
+routes.get('/', (request, response)=>{
+    return response.send('Hello backend!');
+});
+
 // Register a developer
 routes.post('/devs', async (request, response)=> {
 
