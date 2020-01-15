@@ -6,7 +6,10 @@
 // Body: request.body (data fro create or alter a registry)
 
 const { Router} = require('express');
+
 const DevController = require('./controllers/DevControllers');
+//const SearchController = require('./controllers/SearchController');
+
 const routes = Router();
 
 routes.get('/', (request, response)=>{
@@ -14,6 +17,7 @@ routes.get('/', (request, response)=>{
 });
 
 routes.get('/devs', DevController.index); // get all users
-routes.post('/devs', DevController.store); // Register a developer
+routes.post('/devs', DevController.store); // search users
+//routes.get('/search', SearchController.index);
 
 module.exports = routes;
