@@ -13,7 +13,7 @@ routes.get('/', (request, response)=>{
     return response.send('Hello backend!');
 });
 
-// Register a developer
-routes.post('/devs', DevController.store)
+routes.get('/devs', DevController.index); // get all users
+routes.post('/devs', DevController.store); // Register a developer
 
 module.exports = routes;
