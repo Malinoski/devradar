@@ -1,6 +1,10 @@
-# devradar
+# DevRadar
 
-Backend: Node Express was used for REST services and MongoDB for database.
+This is a experiemental client-server application for register and search developers next to you or a specific localization.
+Credits to Rocketseat https://rocketseat.com.br/
+
+The backend server uses Node Express for REST services and MongoDB for database.
+The client server uses React.
 
 ## 1 Gitpod Development Configuration.
 
@@ -39,7 +43,7 @@ cd web
 yarn start
 ```
 
-## 3. Test: 
+## 3. Tests: 
 
 ## 3.1 Test the backend server: 
 
