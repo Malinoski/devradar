@@ -45,7 +45,7 @@ yarn start
 
 ## 3. Tests: 
 
-## 3.1 Test the backend server: 
+### 3.1 Test the backend server: 
 
 You can access directly by web browser or a REST Client, like Insomnia.
 
@@ -55,7 +55,7 @@ http://localhost:3333/
 
 https://3333-f4813423-db02-471a-aceb-d5195425dc5f.ws-us02.gitpod.io/
 
-* #### POST + BODY PARAM
+* #### POST + Body param
 
 https://3333-f4813423-db02-471a-aceb-d5195425dc5f.ws-us02.gitpod.io/devs
 
@@ -66,10 +66,10 @@ https://3333-f4813423-db02-471a-aceb-d5195425dc5f.ws-us02.gitpod.io/devs
 	"longitude": -43.2187699
 }
 
-* #### GET + QUERY PARAM
+* #### GET + Query param
 
 https://3333-f4813423-db02-471a-aceb-d5195425dc5f.ws-us02.gitpod.io/search?latitude=-22.5262556&longitude=-43.2187699&techs=Java
 
-## 3.2 Test the web server: 
+### 3.2 Test the web server: 
 
 https://3000-f4813423-db02-471a-aceb-d5195425dc5f.ws-us02.gitpod.io:443
