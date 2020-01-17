@@ -14,13 +14,15 @@ Access gitpod.io#https://github.com/Malinoski/devradar and configure:
 cd backend
 yarn add express
 yarn add nodemon -D
+yarn add cors
 ```
 
 ```
 cd ..
 cd web
+yarn add axios
 
-# An error could show: 
+# For Gitpod user, the following error could show: 
 # Error SecurityError: Failed to construct 'WebSocket': An insecure WebSocket connection may not be initiated from a page loaded over HTTPS.
 # If happens to you, this is a bug in the dependence eact-scripts 3.3.0 (package.json - "eact-scripts": "^3.2.0").
 # To fix that, downgrade the version of this dependence to 3.2.0:
