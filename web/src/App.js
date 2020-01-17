@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import './global.css';
 import './App.css';
@@ -16,6 +16,10 @@ State: The values of a property a keeped on updates (inmutable)
 
 function App() {
 
+    const [latitude, setLatitude] = useState('');
+    const [longitude, setLongitude]  = useState('');
+
+    // For any cchange in this component (App), the user location it will updated
     useEffect( () => {
         
         // Already available at the brownser
@@ -23,7 +27,9 @@ function App() {
 
             // Success
             (position) => {
-                console.log(position);
+                const { latitude, longitude } = position.coords;
+                setLatitude(latitude);
+                setLongitude(longitude);
             },
 
             // Error
@@ -58,11 +64,25 @@ function App() {
                     <div className="input-group">
                         <div className="input-block">
                             <label htmlFor="latitude">Latitide</label>
-                            <input name="latitude" id="latitude" required />
+                            <input 
+                                type="number" 
+                                name="latitude" 
+                                id="latitude" 
+                                required 
+                                value={latitude} 
+                                onChange={e => setLatitude(e.target.value)}
+                            />
                         </div>
                         <div className="input-block">
                             <label htmlFor="longitude">Longitude</label>
-                            <input name="longitude" id="longitude" required />
+                            <input 
+                                type="number" 
+                                name="longitude" 
+                                id="longitude" 
+                                required 
+                                value={longitude} 
+                                onChange={e => setLongitude(e.target.value)}    
+                            />
                         </div>
                     </div>
 
