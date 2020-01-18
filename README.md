@@ -35,7 +35,7 @@ Run the backend server at a dedicated terminal:
 
 ```
 cd backend
-yarn nodemon src/index.js 
+yarn dev
 ```
 
 Run the web client at a second dedicated terminal:

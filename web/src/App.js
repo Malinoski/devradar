@@ -17,6 +17,8 @@ State: The values of a property a keeped on updates (inmutable)
 
 function App() {
 
+    const [devs, setDevs] = useState([]);
+
     const [github_username, setGithuUsername] = useState('');
     const [techs, setTechs] = useState('');
 
@@ -47,10 +49,23 @@ function App() {
             }
         )
         
-    }, []);
+    }, []); // [] for one execution
+
+    // Load all devs
+    useEffect( () => {
+       
+        async function loadDevs(){
+            const response = await api.get('/devs');
+            setDevs(response.data);
+        }
+
+        loadDevs();
+    }, []) // [] for one execution
 
     async function handleAddDev(e){
+
         e.preventDefault(); // Prevent the html send to another page
+
         const response = await api.post('/devs',{
             github_username,
             techs,
@@ -58,7 +73,14 @@ function App() {
             longitude
         });
 
+        //setGithuUsername('');
+       //setTechs('');
+
         console.log(response.data);
+        //console.log(devs);
+        // Create a new array with the new user (dont use .push, we need to keep the state paradigm)
+        setDevs([...devs, response.data]);
+        //console.log(devs);
     }
 
     return (
@@ -120,61 +142,20 @@ function App() {
             </aside>
             <main>
                 <ul>
-                    <li className="dev-item">
-                        <header>
-                            <img src="https://avatars0.githubusercontent.com/u/5756323?s=460&v=4" alt="Iuri Malinoski"/>
-                            <div className="user-info">
-                                <strong>Iuri Malinoski</strong>                            
-                                <span>Java, PHP, Javascript, Python, Shell script</span>                            
-                            </div>                        
-                        </header>
-                        <p>Software Developer</p>
-                        <a href="https://github.com/Malinoski">Acessar perfil no Github</a>
-                    </li>
-                    <li className="dev-item">
-                        <header>
-                            <img src="https://avatars0.githubusercontent.com/u/5756323?s=460&v=4" alt="Iuri Malinoski"/>
-                            <div className="user-info">
-                                <strong>Iuri Malinoski</strong>                            
-                                <span>Java, PHP, Javascript, Python, Shell script</span>                            
-                            </div>                        
-                        </header>
-                        <p>Software Developer</p>
-                        <a href="https://github.com/Malinoski">Acessar perfil no Github</a>
-                    </li>
-                    <li className="dev-item">
-                        <header>
-                            <img src="https://avatars0.githubusercontent.com/u/5756323?s=460&v=4" alt="Iuri Malinoski"/>
-                            <div className="user-info">
-                                <strong>Iuri Malinoski</strong>                            
-                                <span>Java, PHP, Javascript, Python, Shell script</span>                            
-                            </div>                        
-                        </header>
-                        <p>Software Developer</p>
-                        <a href="https://github.com/Malinoski">Acessar perfil no Github</a>
-                    </li>
-                    <li className="dev-item">
-                        <header>
-                            <img src="https://avatars0.githubusercontent.com/u/5756323?s=460&v=4" alt="Iuri Malinoski"/>
-                            <div className="user-info">
-                                <strong>Iuri Malinoski</strong>                            
-                                <span>Java, PHP, Javascript, Python, Shell script</span>                            
-                            </div>                        
-                        </header>
-                        <p>Software Developer</p>
-                        <a href="https://github.com/Malinoski">Acessar perfil no Github</a>
-                    </li>
-                    <li className="dev-item">
-                        <header>
-                            <img src="https://avatars0.githubusercontent.com/u/5756323?s=460&v=4" alt="Iuri Malinoski"/>
-                            <div className="user-info">
-                                <strong>Iuri Malinoski</strong>                            
-                                <span>Java, PHP, Javascript, Python, Shell script</span>                            
-                            </div>                        
-                        </header>
-                        <p>Software Developer</p>
-                        <a href="https://github.com/Malinoski">Acessar perfil no Github</a>
-                    </li>
+                    {devs.map( dev =>(
+                        <li key={dev._id} className="dev-item">
+                            <header>
+                                <img src={dev.avatar_url} alt={dev.name}/>
+                                <div className="user-info">
+                                    <strong>{dev.name}</strong>                            
+                                    <span>{dev.techs.join(', ')}</span>                            
+                                </div>                        
+                            </header>
+                            <p>{dev.bio}</p>
+                            <a href={`https://github.com/${dev.github_username}`}>Acessar perfil no Github</a>
+                        </li>    
+                    ))}                    
+                    
                 </ul>
             </main>
         </div>
