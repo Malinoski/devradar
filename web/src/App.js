@@ -5,54 +5,21 @@ import './global.css';
 import './App.css';
 import './Sidebar.css';
 import './Main.css';
+
+import DevForm from './component/DevForm';
 import DevItem from './component/DevItem';
 
-
 /* Notes: 
-
 Most important concept of React:
 Component: A isolated block of HTML, Javascript and CSS.
 Property: The properties of a block.
 State: The values of a property a keeped on updates (inmutable)
-
 */
 
 function App() {
 
     const [devs, setDevs] = useState([]);
-
-    const [github_username, setGithuUsername] = useState('');
-    const [techs, setTechs] = useState('');
-
-    const [latitude, setLatitude] = useState('');
-    const [longitude, setLongitude]  = useState('');
-
-    // For any cchange in this component (App), the user location it will updated
-    useEffect( () => {
-        
-        // Already available at the brownser
-        navigator.geolocation.getCurrentPosition(
-
-            // Success
-            (position) => {
-                const { latitude, longitude } = position.coords;
-                setLatitude(latitude);
-                setLongitude(longitude);
-            },
-
-            // Error
-            (err) => {
-                console.log(err);
-            },
-
-            // finaly
-            {
-                timeout: 30000,
-            }
-        )
-        
-    }, []); // [] for one execution
-
+    
     // Load all devs
     useEffect( () => {
        
@@ -64,22 +31,11 @@ function App() {
         loadDevs();
     }, []) // [] for one execution
 
-    async function handleAddDev(e){
+    async function handleAddDev(data){
 
-        e.preventDefault(); // Prevent the html send to another page
-
-        const response = await api.post('/devs',{
-            github_username,
-            techs,
-            latitude,
-            longitude
-        });
-
-        setGithuUsername('');
-        setTechs('');
-
+        const response = await api.post('/devs',data);
         // console.log(response.data);
-        // console.log(devs);
+
         // Create a new array with the new user (dont use .push, we need to keep the state paradigm)
         setDevs([...devs, response.data]);
         // console.log(devs);
@@ -89,58 +45,7 @@ function App() {
         <div id="app">
             <aside>
                 <strong>Cadastrar</strong>
-                <form onSubmit={handleAddDev}>
-
-                    <div className="input-block">
-                        <label htmlFor="github_username">Usuário do Github</label>
-                        <input 
-                            name="github_username" 
-                            id="github_username" 
-                            required 
-                            value={github_username}
-                            onChange={e => setGithuUsername(e.target.value)}
-                        />
-                    </div>
-
-                    <div className="input-block">
-                        <label htmlFor="techs">Technologias</label>
-                        <input 
-                            name="techs" 
-                            id="techs" 
-                            required 
-                            value={techs}
-                            onChange={e => setTechs(e.target.value)}
-                        />
-                    </div>
-
-                    <div className="input-group">
-                        <div className="input-block">
-                            <label htmlFor="latitude">Latitide</label>
-                            <input 
-                                type="number" 
-                                name="latitude" 
-                                id="latitude" 
-                                required 
-                                value={latitude} 
-                                onChange={e => setLatitude(e.target.value)}
-                            />
-                        </div>
-                        <div className="input-block">
-                            <label htmlFor="longitude">Longitude</label>
-                            <input 
-                                type="number" 
-                                name="longitude" 
-                                id="longitude" 
-                                required 
-                                value={longitude} 
-                                onChange={e => setLongitude(e.target.value)}    
-                            />
-                        </div>
-                    </div>
-
-                    <button type="submit">Salvar</button>                
-
-                </form>
+                <DevForm onSubmit={handleAddDev} />
             </aside>
             <main>
                 <ul>
