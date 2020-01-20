@@ -8,7 +8,9 @@ The client server uses React.
 
 ## 1 Gitpod Development Configuration.
 
-Access gitpod.io#https://github.com/Malinoski/devradar and configure:
+Access gitpod.io#https://github.com/Malinoski/devradar. Follow the steps considering the root project path ('devradar/')
+
+### 1.1 Configure the backend server:
 
 ```
 cd backend
@@ -17,8 +19,9 @@ yarn add nodemon -D
 yarn add cors
 ```
 
+### 1.2 Configure th web client
+
 ```
-cd ..
 cd web
 yarn add axios
 
@@ -29,23 +32,41 @@ yarn add axios
 npm i react-scripts@3.2 
 ```
 
-## 2. Execute
+### 1.3 Configure the mobile client:
 
-Run the backend server at a dedicated terminal:
+```
+cd mobile
+yarn global add expo-cli
+export PATH="$(yarn global bin):$PATH" # enable 'expo' command
+expo init mobile # say 'yes' for all
+expo start --tunnel # open all ports
+```
+
+## 2. Run
+
+Run the backend server:
 
 ```
 cd backend
-yarn dev
+yarn dev # expose all ports
 ```
 
-Run the web client at a second dedicated terminal:
+Run the web client:
 
 ```
 cd web
-yarn start
+yarn start # expose all ports
 ```
 
-## 3. Tests: 
+Run de mobile client (Android app 'Expo' was used to help the development):
+
+```
+cd mobile
+yarn start # expose all ports
+# Get you Android, install the app 'Expo' and scan the QRCode generated on previous command.
+```
+
+## 3. Run: 
 
 ### 3.1 Test the backend server: 
 
