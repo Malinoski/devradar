@@ -10,7 +10,7 @@ The client server uses React.
 
 Access gitpod.io#https://github.com/Malinoski/devradar. Follow the steps considering the root project path ('devradar/')
 
-### 1.1 Configure the backend server:
+* Backend server:
 
 ```
 cd backend
@@ -19,7 +19,7 @@ yarn add nodemon -D
 yarn add cors
 ```
 
-### 1.2 Configure th web client
+* Web client
 
 ```
 cd web
@@ -32,7 +32,7 @@ yarn add axios
 npm i react-scripts@3.2 
 ```
 
-### 1.3 Configure the mobile client:
+* Mobile client:
 
 ```
 cd rootProject
@@ -46,29 +46,35 @@ yarn add react-navigation-stack
 yarn add @react-native-community/masked-view
 expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context
 expo install react-native-maps
+expo install expo-location
 ```
 
 ## 2. Run
 
-Run the backend server:
+Backend server:
 
 ```
 cd backend
 yarn dev # expose all ports
 ```
 
-Run the web client:
+Web client:
 
 ```
 cd web
 yarn start # expose all ports
 ```
 
-Run de mobile client (Android app 'Expo' was used to help the development):
+Mobile client ():
 
 ```
 cd mobile
+
+# Case Gitpod:
 expo start --tunnel # open all ports
+
+# Case localhost
+yarn start
 ```
 
 ## 3. Run: 
@@ -102,6 +108,6 @@ https://3333-f4813423-db02-471a-aceb-d5195425dc5f.ws-us02.gitpod.io/search?latit
 
 https://3000-f4813423-db02-471a-aceb-d5195425dc5f.ws-us02.gitpod.io:443
 
-### 3.3 Test the mobile client
+### 3.3 Test the mobile client 
 
 Get you Android, install the app 'Expo', open it and scan the QRCode (generated when started the mobile client).
