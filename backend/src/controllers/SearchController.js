@@ -7,10 +7,12 @@ module.exports = {
         // Search users in a range/distance (10km)
         // Filter by tech
 
+        // console.log(request.query);
+
         const { latitude, longitude, techs } = request.query;
 
         const techsArray = parseStringAsArray(techs);
-        console.log(techsArray);
+        // console.log(techsArray);
 
         const devs = await Dev.find({
             techs: { // all devs who has these techs
@@ -28,6 +30,7 @@ module.exports = {
             }
         })
         
+        // console.log(devs);
         return response.json({devs});
     }
 }

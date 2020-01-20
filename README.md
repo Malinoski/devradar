@@ -48,6 +48,7 @@ expo install react-native-gesture-handler react-native-reanimated react-native-s
 expo install react-native-maps
 expo install expo-location
 expo install react-native-webview
+yarn install axios # used to call background api
 ```
 
 ## 2. Run
