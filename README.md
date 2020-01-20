@@ -45,6 +45,7 @@ yarn add react-navigation
 yarn add react-navigation-stack
 yarn add @react-native-community/masked-view
 expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context
+expo install react-native-maps
 ```
 
 ## 2. Run
