@@ -73,14 +73,14 @@ function App() {
             longitude
         });
 
-        //setGithuUsername('');
-       //setTechs('');
+        setGithuUsername('');
+        setTechs('');
 
-        console.log(response.data);
-        //console.log(devs);
+        // console.log(response.data);
+        // console.log(devs);
         // Create a new array with the new user (dont use .push, we need to keep the state paradigm)
         setDevs([...devs, response.data]);
-        //console.log(devs);
+        // console.log(devs);
     }
 
     return (
