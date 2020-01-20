@@ -35,11 +35,18 @@ npm i react-scripts@3.2
 ### 1.3 Configure the mobile client:
 
 ```
-cd mobile
+cd rootProject
 yarn global add expo-cli
 export PATH="$(yarn global bin):$PATH" # enable 'expo' command
 expo init mobile # say 'yes' for all
+
+cd mobile 
+yarn add react-navigation
+yarn add react-navigation-stack
+yarn add @react-native-community/masked-view
+expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context
 expo start --tunnel # open all ports
+
 ```
 
 ## 2. Run
