@@ -45,8 +45,6 @@ yarn add react-navigation
 yarn add react-navigation-stack
 yarn add @react-native-community/masked-view
 expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context
-expo start --tunnel # open all ports
-
 ```
 
 ## 2. Run
@@ -69,8 +67,7 @@ Run de mobile client (Android app 'Expo' was used to help the development):
 
 ```
 cd mobile
-yarn start # expose all ports
-# Get you Android, install the app 'Expo' and scan the QRCode generated on previous command.
+expo start --tunnel # open all ports
 ```
 
 ## 3. Run: 
@@ -100,6 +97,10 @@ https://3333-f4813423-db02-471a-aceb-d5195425dc5f.ws-us02.gitpod.io/devs
 
 https://3333-f4813423-db02-471a-aceb-d5195425dc5f.ws-us02.gitpod.io/search?latitude=-22.5262556&longitude=-43.2187699&techs=Java
 
-### 3.2 Test the web server: 
+### 3.2 Test the web client:
 
 https://3000-f4813423-db02-471a-aceb-d5195425dc5f.ws-us02.gitpod.io:443
+
+### 3.3 Test the mobile client
+
+Get you Android, install the app 'Expo', open it and scan the QRCode (generated when started the mobile client).
