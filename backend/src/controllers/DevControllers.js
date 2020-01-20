@@ -20,20 +20,20 @@ module.exports = {
         
         if(!dev){
             const apiResponse = await axios.get(`https://api.github.com/users/${github_username}`);
-            // console.log(apiResponse.data);
+            console.log(apiResponse.data);
 
             const { name = login, avatar_url, bio } = apiResponse.data;
-            // console.log(name, avatar_url);
+            console.log(name, avatar_url);
 
             const techsArray = parseStringAsArray(techs);
-            // console.log(techsArray);
+            console.log(techsArray);
 
             const location = {
                 type: 'Point',
                 coordinates: [longitude, latitude],
             }
 
-            const dev = await Dev.create({
+            dev = await Dev.create({
                 github_username,
                 name,
                 avatar_url,
@@ -42,7 +42,7 @@ module.exports = {
                 location
             })
         }
-
+        console.log(dev);
         // return response.json({message: 'Hello World!!'}); //json
         return response.json(dev); //json
     },
