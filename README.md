@@ -8,11 +8,12 @@ The client server uses React.
 
 ## 1 Gitpod Development Configuration.
 
-Access gitpod.io#https://github.com/Malinoski/devradar. Follow the steps considering the root project path ('devradar/')
+Access [here](https://gitpod.io#https://github.com/Malinoski/devradar) to load this repository in Gitpod.
 
 * Backend server:
 
 ```
+# Go to root project
 cd backend
 yarn add express
 yarn add nodemon -D
@@ -22,6 +23,7 @@ yarn add cors
 * Web client
 
 ```
+# Go to root project
 cd web
 yarn add axios
 
@@ -35,7 +37,7 @@ npm i react-scripts@3.2
 * Mobile client:
 
 ```
-cd rootProject
+# Go to root project
 yarn global add expo-cli
 export PATH="$(yarn global bin):$PATH" # enable 'expo' command
 expo init mobile # say 'yes' for all
@@ -56,6 +58,7 @@ yarn install axios # used to call background api
 Backend server:
 
 ```
+# Go to root project
 cd backend
 yarn dev # expose all ports
 ```
@@ -63,6 +66,7 @@ yarn dev # expose all ports
 Web client:
 
 ```
+# Go to root project
 cd web
 yarn start # expose all ports
 ```
@@ -70,6 +74,7 @@ yarn start # expose all ports
 Mobile client ():
 
 ```
+# Go to root project
 cd mobile
 
 # Case Gitpod:
