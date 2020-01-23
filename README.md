@@ -17,6 +17,7 @@ cd backend
 yarn add express
 yarn add nodemon -D
 yarn add cors
+yarn add socket.io # for real time communication (like, add user and show at mobile client)
 ```
 
 * Web client
