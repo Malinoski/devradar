@@ -1,16 +1,16 @@
 # DevRadar
 
-This is a experiemental client-server application for register and search developers next to you or a specific localization.
-Credits to Rocketseat https://rocketseat.com.br/
+This is a experimental client-server application aimed to register and search developers next to you in real time.
+Thanks to Rocketseat https://rocketseat.com.br/
 
-The backend server uses Node Express for REST services and MongoDB for database.
-The client server uses React.
+The backend is a node.js server and offer REST services implemented in Express and uses MongoDB for database.
+The clients are web page and mobile, the first implemented with React and second with React Native.
 
 ## 1 Gitpod Development Configuration.
 
 Access [here](https://gitpod.io#https://github.com/Malinoski/devradar) to load this repository in Gitpod.
 
-* Backend server:
+### 1.1 Backend
 
 ```
 # Go to root project
@@ -21,7 +21,7 @@ yarn add cors
 yarn add socket.io # for real time communication (like, add user and show at mobile client)
 ```
 
-* Web client
+### 1.2 Web
 
 ```
 # Go to root project
@@ -35,7 +35,7 @@ yarn add axios
 npm i react-scripts@3.2 
 ```
 
-* Mobile client:
+### 1.3 Mobile
 
 ```
 # Go to root project
@@ -56,7 +56,7 @@ yarn install axios # used to call background api
 
 ## 2. Run
 
-Backend server:
+### 2.1 Backend
 
 ```
 # Go to root project
@@ -64,7 +64,7 @@ cd backend
 yarn dev # expose all ports
 ```
 
-Web client:
+### 2.2 Web
 
 ```
 # Go to root project
@@ -72,7 +72,7 @@ cd web
 yarn start # expose all ports
 ```
 
-Mobile client:
+### 2.3 Mobile
 
 ```
 cd ROOT_PROJECT
@@ -84,18 +84,18 @@ expo start --tunnel # Execute in gitpod . Case localhost use: yarn start
 
 ## 3. Test: 
 
-### 3.1 Test the backend server: 
+### 3.1 Backend
 
-You can access directly by web browser or a REST Client, like Insomnia.
+#### GET
 
-* #### GET
-
+```
 http://localhost:3333/
 
 https://3333-f4813423-db02-471a-aceb-d5195425dc5f.ws-us02.gitpod.io/
+``` 
+#### POST + Body param
 
-* #### POST + Body param
-
+```
 https://3333-f4813423-db02-471a-aceb-d5195425dc5f.ws-us02.gitpod.io/devs
 
 {
@@ -104,15 +104,26 @@ https://3333-f4813423-db02-471a-aceb-d5195425dc5f.ws-us02.gitpod.io/devs
 	"latitude": -22.5262556,
 	"longitude": -43.2187699
 }
+```
 
-* #### GET + Query param
+#### GET + Query param
 
+```
 https://3333-f4813423-db02-471a-aceb-d5195425dc5f.ws-us02.gitpod.io/search?latitude=-22.5262556&longitude=-43.2187699&techs=Java
+```
 
-### 3.2 Test the web client:
+### 3.2 Web
 
+```
 https://3000-f4813423-db02-471a-aceb-d5195425dc5f.ws-us02.gitpod.io:443
+```
 
-### 3.3 Test the mobile client 
+### 3.3 Mobile
 
+```
 Get you Android, install the app 'Expo', open it and scan the QRCode (generated when started the mobile client).
+```
+
+## Acknowledgements
+
+Thanks to Rocketseat (https://rocketseat.com.br/)
