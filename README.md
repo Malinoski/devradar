@@ -76,15 +76,10 @@ Mobile client:
 
 ```
 cd ROOT_PROJECT
+yarn global add expo-cli
 export PATH="$(yarn global bin):$PATH"
-# Go to root project
 cd mobile
-
-# Case Gitpod:
-expo start --tunnel # open all ports
-
-# Case localhost
-yarn start
+expo start --tunnel # Execute in gitpod . Case localhost use: yarn start
 ```
 
 ## 3. Test: 

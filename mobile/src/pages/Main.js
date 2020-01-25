@@ -5,7 +5,7 @@ import { requestPermissionsAsync, getCurrentPositionAsync } from 'expo-location'
 import { MaterialIcons } from '@expo/vector-icons';
 
 import api from '../services/api';
-import { connect, disconnect } from '../services/socket';
+import { connect, disconnect, subscribeToNewDevs } from '../services/socket';
 
 function Main({navigation}) {
 
@@ -36,7 +36,15 @@ function Main({navigation}) {
         loadInitialPosition();
     }, []); // [] means to execute just one time
 
+    // always execute when a varieble change the subscribeToNewDevs will be executed
+    useEffect( () => {
+        subscribeToNewDevs( dev => setDevs([...devs, dev]));
+    }, [devs] );
+
     function setupWebsocket() {
+
+        disconnect();
+
         const { latitude, longitude } = currentRegion;
 
         connect(
@@ -44,6 +52,7 @@ function Main({navigation}) {
             longitude,
             techs,
         );
+
     }
 
     async function loadDevs() {
