@@ -72,9 +72,11 @@ cd web
 yarn start # expose all ports
 ```
 
-Mobile client ():
+Mobile client:
 
 ```
+cd ROOT_PROJECT
+export PATH="$(yarn global bin):$PATH"
 # Go to root project
 cd mobile
 
@@ -85,7 +87,7 @@ expo start --tunnel # open all ports
 yarn start
 ```
 
-## 3. Run: 
+## 3. Test: 
 
 ### 3.1 Test the backend server: 
 
