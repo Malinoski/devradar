@@ -37,7 +37,13 @@ function Main({navigation}) {
     }, []); // [] means to execute just one time
 
     function setupWebsocket() {
-        connect();
+        const { latitude, longitude } = currentRegion;
+
+        connect(
+            latitude,
+            longitude,
+            techs,
+        );
     }
 
     async function loadDevs() {
